@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.tienditadonpepe.controller.LoginController">
+    <HBox>
+        <VBox fx:id="lado" styleClass="login-lado" alignment="CENTER" prefWidth="500" minWidth="420" maxWidth="560" HBox.hgrow="NEVER">
+            <VBox fx:id="marca" spacing="18" alignment="CENTER"/>
+        </VBox>
+        <VBox styleClass="login-formulario" HBox.hgrow="ALWAYS">
+            <VBox maxWidth="380" spacing="16" maxHeight="-Infinity">
+                <VBox spacing="4">
+                    <Label styleClass="login-titulo" text="Iniciar sesión"/>
+                    <Label styleClass="texto-muted" text="Ingresa con tu usuario y contraseña para continuar."/>
+                </VBox>
+                <Label fx:id="lblError" styleClass="mensaje-error" visible="false" managed="false" maxWidth="Infinity"/>
+                <VBox spacing="6">
+                    <Label styleClass="etiqueta-campo" text="Usuario"/>
+                    <TextField fx:id="txtUsuario" styleClass="login-campo" promptText="Tu nombre de usuario"/>
+                </VBox>
+                <VBox spacing="6">
+                    <Label styleClass="etiqueta-campo" text="Contraseña"/>
+                    <StackPane fx:id="cajaClave" alignment="CENTER_RIGHT">
+                        <PasswordField fx:id="txtClave" styleClass="login-campo" promptText="Tu contraseña"/>
+                        <TextField fx:id="txtClaveVisible" styleClass="login-campo" promptText="Tu contraseña" visible="false"/>
+                        <Button fx:id="btnVer" styleClass="btn-icono-plano" focusTraversable="false" StackPane.alignment="CENTER_RIGHT">
+                            <StackPane.margin>
+                                <Insets right="6"/>
+                            </StackPane.margin>
+                        </Button>
+                    </StackPane>
+                </VBox>
+                <Button fx:id="btnIngresar" styleClass="btn-primary, btn-grande" maxWidth="Infinity" defaultButton="true"
+                        text="Ingresar" onAction="#ingresar"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</StackPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" styleClass="vista" minHeight="-Infinity"
+      fx:controller="com.tienditadonpepe.controller.DashboardController">
+    <HBox fx:id="kpis" spacing="16"/>
+    <HBox spacing="16" minHeight="-Infinity">
+        <VBox styleClass="card, card-pad" HBox.hgrow="ALWAYS" prefWidth="620">
+            <VBox spacing="2">
+                <Label styleClass="card-titulo" text="Ventas de los últimos 14 días"/>
+                <Label fx:id="lblResumenGrafico" styleClass="card-sub"/>
+            </VBox>
+            <BarChart fx:id="grafico" legendVisible="false" animated="false" barGap="2" categoryGap="8" VBox.vgrow="ALWAYS" minHeight="220">
+                <xAxis>
+                    <CategoryAxis fx:id="ejeX" tickLabelRotation="0"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="ejeY" side="LEFT" minorTickVisible="false"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+        <VBox styleClass="card, card-pad" prefWidth="380" minWidth="340" maxWidth="440">
+            <VBox spacing="2">
+                <Label styleClass="card-titulo" text="Estado del inventario"/>
+                <Label styleClass="card-sub" text="Stock actual frente al stock mínimo"/>
+            </VBox>
+            <VBox fx:id="estado" spacing="16"/>
+        </VBox>
+    </HBox>
+    <HBox spacing="16" minHeight="-Infinity">
+        <VBox styleClass="card, card-pad" HBox.hgrow="ALWAYS" prefWidth="500">
+            <HBox alignment="CENTER_LEFT">
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+                    <Label styleClass="card-titulo" text="Atención requerida"/>
+                    <Label styleClass="card-sub" text="Stock crítico y productos próximos a vencer"/>
+                </VBox>
+                <Button fx:id="btnVerProductos" styleClass="btn-ghost" text="Ver productos" onAction="#irProductos"/>
+            </HBox>
+            <VBox fx:id="alertas" spacing="8"/>
+        </VBox>
+        <VBox styleClass="card, card-pad" HBox.hgrow="ALWAYS" prefWidth="500">
+            <HBox alignment="CENTER_LEFT">
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+                    <Label styleClass="card-titulo" text="Últimos movimientos"/>
+                    <Label styleClass="card-sub" text="Entradas y salidas más recientes"/>
+                </VBox>
+                <Button styleClass="btn-ghost" text="Ver historial" onAction="#irMovimientos"/>
+            </HBox>
+            <VBox fx:id="movimientos" spacing="2"/>
+        </VBox>
+    </HBox>
+</VBox>

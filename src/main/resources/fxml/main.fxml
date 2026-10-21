@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.tienditadonpepe.controller.MainController">
+    <BorderPane>
+        <left>
+            <VBox fx:id="sidebar" styleClass="sidebar"/>
+        </left>
+        <top>
+            <HBox styleClass="cabecera">
+                <VBox spacing="1" HBox.hgrow="ALWAYS">
+                    <Label fx:id="lblTitulo" styleClass="cabecera-titulo"/>
+                    <Label fx:id="lblSubtitulo" styleClass="cabecera-sub"/>
+                </VBox>
+                <Label fx:id="lblFecha" styleClass="cabecera-sub"/>
+                <StackPane fx:id="campana"/>
+            </HBox>
+        </top>
+        <center>
+            <StackPane fx:id="contenido"/>
+        </center>
+    </BorderPane>
+</StackPane>
