@@ -1,9 +1,4 @@
--- ============================================================================
---  Sistema de Control de Inventario de Atún Enlatado — "Tiendita de Don Pepe"
---  Curso Integrador I: Sistemas – Software (UTP)
---  Modelo físico (Figura 35) y diccionario de datos (Tablas 21 a 27)
---  Compatible con MySQL 8.x y MariaDB 10.4+ (XAMPP)
--- ============================================================================
+
 
 CREATE DATABASE IF NOT EXISTS tiendita_don_pepe
     CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
