@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" styleClass="vista"
+      fx:controller="com.tienditadonpepe.controller.ProductosController">
+    <HBox styleClass="barra-filtros">
+        <TextField fx:id="txtBuscar" promptText="Buscar por producto, marca o presentación" prefWidth="300" HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="cmbSituacion" prefWidth="200" minWidth="200"/>
+        <HBox fx:id="accionesAdmin" spacing="8" alignment="CENTER_RIGHT"/>
+    </HBox>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label fx:id="lblResumen" styleClass="texto-muted"/>
+    </HBox>
+</VBox>
