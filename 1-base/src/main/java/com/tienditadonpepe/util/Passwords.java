@@ -7,11 +7,6 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.Base64;
 
-/**
- * Cifrado de contraseñas (RNF02: seguridad de acceso). Se usa PBKDF2-HMAC-SHA256 con sal aleatoria;
- * el resultado se guarda en la columna usuario.contrasena_hash con el formato
- * {@code pbkdf2_sha256$iteraciones$sal$hash}.
- */
 public final class Passwords {
 
     private static final String ALGORITMO = "PBKDF2WithHmacSHA256";
@@ -58,15 +53,22 @@ public final class Passwords {
         }
     }
 
-    /** Política: mínimo 8 caracteres con al menos una letra y un número. Devuelve el motivo o null si es válida. */
+    /** Mínimo 8 caracteres con minúscula, mayúscula, dígito y símbolo. Devuelve el motivo o null. */
     public static String validarPolitica(String contrasena) {
         if (contrasena == null || contrasena.length() < 8) {
             return "La contraseña debe tener al menos 8 caracteres.";
         }
-        boolean letra = contrasena.chars().anyMatch(Character::isLetter);
-        boolean numero = contrasena.chars().anyMatch(Character::isDigit);
-        if (!letra || !numero) {
-            return "La contraseña debe combinar letras y números.";
+        if (contrasena.chars().noneMatch(Character::isLowerCase)) {
+            return "La contraseña debe incluir al menos una letra minúscula.";
+        }
+        if (contrasena.chars().noneMatch(Character::isUpperCase)) {
+            return "La contraseña debe incluir al menos una letra mayúscula.";
+        }
+        if (contrasena.chars().noneMatch(Character::isDigit)) {
+            return "La contraseña debe incluir al menos un dígito.";
+        }
+        if (contrasena.chars().allMatch(Character::isLetterOrDigit)) {
+            return "La contraseña debe incluir al menos un símbolo especial (por ejemplo @ # $ % !).";
         }
         return null;
     }
