@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" styleClass="vista"
+      fx:controller="com.tienditadonpepe.controller.ReportesController">
+    <TabPane fx:id="tabs" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab text="Ventas">
+            <VBox fx:id="tabVentas" spacing="14" style="-fx-padding: 14 0 0 0;"/>
+        </Tab>
+        <Tab text="Inventario valorizado">
+            <VBox fx:id="tabInventario" spacing="14" style="-fx-padding: 14 0 0 0;"/>
+        </Tab>
+        <Tab text="Indicadores mensuales">
+            <VBox fx:id="tabIndicadores" spacing="14" style="-fx-padding: 14 0 0 0;"/>
+        </Tab>
+    </TabPane>
+</VBox>
